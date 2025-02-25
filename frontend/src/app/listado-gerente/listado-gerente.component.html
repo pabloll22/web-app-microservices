@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12" *ngIf="isAdministrador()">
+      <h1 class="text-center">Listado de gerentes</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Email</th>
+            <th>Gerente</th>
+            <th>Centros</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let usuario of usuarios">
+            <tr *ngIf="usuario.gerente" class="align-middle">
+              <td>{{usuario.nombre}}</td>
+              <td>{{usuario.apellido1}} {{usuario.apellido2}}</td>
+              <td>{{usuario.email}}</td>
+              <td>{{usuario.gerente ? 'Sí' : 'No'}}</td>
+              <td>
+                <ng-container *ngIf="usuario.centro && usuario.centro.length > 0">
+                  <ul>
+                    <li *ngFor="let centro of usuario.centro">
+                      {{ centro.nombre }}
+                    </li>
+                  </ul>
+                </ng-container>
+                <span *ngIf="!usuario.centro || usuario.centro.length === 0">No asignado</span>
+              </td>
+              <td>
+                <button class="btn btn-sm btn-outline-primary m-1" (click)="editarUsuario(usuario)">
+                  <i class="bi bi-pencil-fill"></i>
+                </button>
+                <button (click)="eliminarGerente(usuario.id)" class="btn btn-sm btn-outline-danger m-1">
+                  <i class="bi bi-trash-fill"></i>
+                </button>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-12" *ngIf="!isAdministrador()">
+      <p class="alert alert-danger">No tiene permisos para ver este contenido.</p>
+    </div>
+  </div>
+</div>

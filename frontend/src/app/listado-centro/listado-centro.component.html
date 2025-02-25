@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12" *ngIf="isAdministrador()">
+      <h1 class="text-center">Listado de centros</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let centro of centros" class="align-middle">
+            <td>{{centro.id}}</td>
+            <td>{{centro.nombre}}</td>
+            <td>{{centro.direccion}}</td>
+            <td><button class="btn btn-sm btn-outline-primary m-1" (click)="editarCentro(centro)"><i class="bi bi-pencil-fill"></i></button>
+              <button (click)="eliminarCentro(centro.id)" class="btn btn-sm btn-outline-danger m-1"><i class="bi bi-trash-fill"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" class="btn btn-outline-success bi bi-plus-lg" (click)="aniadirCentro()"></button>
+    </div>
+    <div class="col-12" *ngIf="!isAdministrador()">
+      <p class="alert alert-danger">No tiene permisos para ver este contenido.</p>
+  </div>
+</div>

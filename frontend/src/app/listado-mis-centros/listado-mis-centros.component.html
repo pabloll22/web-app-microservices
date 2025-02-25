@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+      <div class="col-12" *ngIf="isGerente()">
+        <h1 class="text-center">Mis centros</h1>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Direccion</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let centro of centros" class="align-middle">
+              <td>{{centro.id}}</td>
+              <td>{{centro.nombre}}</td>
+              <td>{{centro.direccion}}</td>
+              <td> 
+                <button class="btn-envelope" (click) = paginaMensajes(centro.id)></button>
+            </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12" *ngIf="!isGerente()">
+        <p class="alert alert-danger">No tiene permisos para ver este contenido.</p>
+    </div>
+  </div>
+  

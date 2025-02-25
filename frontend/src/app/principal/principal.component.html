@@ -1,0 +1,30 @@
+<div class="container">
+    <h4 class="titulo">Página Principal</h4>
+    <div class="links">
+      <a [routerLink]="'/usuarios'" class="link-box">
+        <div class="link-content">
+          <p>Gestión de Usuarios</p>
+          <span>(solo administradores)</span>
+        </div>
+      </a>
+      <a [routerLink]="'/gerentes'" class="link-box">
+        <div class="link-content">
+          <p>Gestión de Gerentes</p>
+          <span>(solo administradores)</span>
+        </div>
+      </a>
+      <a [routerLink]="'/centros'" class="link-box">
+        <div class="link-content">
+          <p>Gestión de Centros</p>
+          <span>(solo administradores)</span>
+        </div>
+      </a>
+      <a [routerLink]="'/mis_centros'" class="link-box">
+        <div class="link-content">
+          <p>Mis Centros</p>
+          <span>(solo gerentes)</span>
+        </div>
+      </a>
+    </div>
+  </div>
+  

@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center">Listado de Mensajes</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Emisor</th>
+            <th>Receptor</th>
+            <th>Asunto</th>
+            <th>Contenido</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let mensaje of mensajes" class="align-middle">
+            <td>{{mensaje.emisor}}</td>
+            <td>{{mensaje.receptor}}</td>
+            <td>{{mensaje.asunto}}</td>
+            <td>{{mensaje.cuerpo}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-primary" (click)="volverAtras()">Volver</button>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-12">
+      <h2 class="text-center">Enviar Correo</h2>
+      <form>
+        <div class="mb-3">
+          <label for="emisor" class="form-label">Emisor:</label>
+          <input type="text" class="form-control" id="emisor" required>
+        </div>
+        <div class="mb-3">
+          <label for="receptor" class="form-label">Receptor:</label>
+          <input type="text" class="form-control" id="receptor" required>
+        </div>
+        <div class="mb-3">
+          <label for="asunto" class="form-label">Asunto:</label>
+          <input type="text" class="form-control" id="asunto" required>
+        </div>
+        <div class="mb-3">
+          <label for="cuerpo" class="form-label">Cuerpo:</label>
+          <textarea class="form-control" id="cuerpo" rows="5" required></textarea>
+        </div>
+        <button type="button" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>

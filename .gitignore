@@ -1,0 +1,25 @@
+# Node dependencies
+/frontend/node_modules/
+/frontend/node_modules
+/frontend/node_modules/*
+
+# Compiled output
+/dist
+
+# Local environment files
+/src/environments/*.ts
+
+# TypeScript cache
+*.tsbuildinfo
+
+# IDE/Editor specific files
+.idea
+.vscode
+
+# Log files
+*.log
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+/frontend/.angular/

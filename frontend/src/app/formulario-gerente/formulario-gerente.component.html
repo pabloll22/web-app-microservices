@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{accion}} gerente</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cierre usuario')"></button>
+  </div>
+  <div class="modal-body">
+    <form class="form-group" novalidate>
+      <div class="form-group">
+        <label for="centro">Asignar Centro:</label>
+        <button type="button" class="btn btn-success" *ngFor="let centro of centros" (click)="asignarCentroGerente(centro)">{{ centro.nombre }}</button>
+      </div>
+      <div class="form-group">
+        <label for="centro">Desasignar Centro:</label>
+        <button type="button" class="btn btn-danger" *ngFor="let centro of _usuario.centro" (click)="desasignarCentroGerente(centro)">{{ centro.nombre }}</button>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="guardarUsuario()">Guardar</button>
+  </div>

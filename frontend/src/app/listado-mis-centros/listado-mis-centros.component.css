@@ -1,0 +1,10 @@
+.btn-envelope {
+    width: 40px; /* Aumenta el ancho del botón */
+    height: 30px; /* Aumenta la altura del botón */
+    border: none;
+    background-color: transparent;
+    background-image: url('sobre.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
